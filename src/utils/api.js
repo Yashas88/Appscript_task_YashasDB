@@ -1,4 +1,6 @@
-const API_URL = "https://fakestoreapi.com/products";
+
+// API URL
+const API_URL = process.env.REACT_APP_API_URL || "https://fakestoreapi.com/products";
 
 const PLACEHOLDER_IMAGE = "https://via.placeholder.com/300x400?text=No+Image";
 
@@ -17,13 +19,20 @@ function normalizeProduct(item) {
   };
 }
 
+
+// Fetch products with error handling
 export async function fetchProducts() {
-  const res = await fetch(API_URL);
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) {
+      throw new Error("Failed to fetch products");
+    }
+    const data = await res.json();
+    return Array.isArray(data) ? data.map(normalizeProduct) : [];
+  } catch (err) {
+    console.error("API error:", err);
+    throw err;
   }
-  const data = await res.json();
-  return Array.isArray(data) ? data.map(normalizeProduct) : [];
 }
 
 export function getCategories(products) {

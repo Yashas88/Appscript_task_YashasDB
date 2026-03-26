@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-const PLACEHOLDER_IMAGE = "https://via.placeholder.com/300x400?text=No+Image";
+const PLACEHOLDER_IMAGE = "/placeholder-product.jpg"; // Update path as needed
 
 export default function ProductCard({ product, isNew }) {
   const [wishlisted, setWishlisted] = useState(false);
 
-  const { title, price, image, rating, category } = product ?? {};
+  const { title, price, image, rating } = product ?? {};
   const displayPrice = price ?? 0;
   const displayTitle = title ?? "Untitled Product";
   const displayImage = image || PLACEHOLDER_IMAGE;
@@ -18,7 +18,6 @@ export default function ProductCard({ product, isNew }) {
 
   return (
     <article className="product-card">
-      {isNew && <span className="product-badge">NEW PRODUCT</span>}
       <div className="product-card-image">
         <img
           src={displayImage}
@@ -26,8 +25,10 @@ export default function ProductCard({ product, isNew }) {
           loading="lazy"
           onError={handleImageError}
         />
+        {isNew && <span className="product-card-badge">NEW PRODUCT</span>}
       </div>
       <div className="product-card-info">
+        {/* h2 for product title (semantic SEO) */}
         <h2 className="product-card-title">{displayTitle}</h2>
         {ratingRate > 0 && (
           <div className="product-card-rating">

@@ -15,10 +15,6 @@ export default function Home({ products, categories }) {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [showFilters, setShowFilters] = useState(true);
 
-  // Debug: uncomment to verify API data in browser console
-  // console.log("Products:", products);
-  // console.log("Categories:", categories);
-
   const toggleCategory = (category) => {
     setSelectedCategories((prev) =>
       prev.includes(category)
@@ -52,28 +48,38 @@ export default function Home({ products, categories }) {
   return (
     <>
       <Head>
-        <title>Discover Our Products | Appscrip</title>
+        <title>Appscrip Store</title>
         <meta
           name="description"
-          content="Explore a wide range of curated products at Appscrip Store. Shop men's clothing, women's clothing, jewelry, and electronics."
+          content="Explore high-quality products including clothing, jewelry, and electronics at the best prices. Shop now from Appscrip Store."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Discover Our Products | Appscrip" />
-        <meta
-          property="og:description"
-          content="Explore a wide range of curated products at Appscrip Store."
-        />
+        {/* Open Graph tags for social SEO */}
+        <meta property="og:title" content="Discover Our Products" />
+        <meta property="og:description" content="Browse premium products online." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://appscrip-store.com" />
         <link rel="icon" href="/favicon.ico" />
+        {/* Schema.org ItemList structured data for products */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Store",
-              name: "Appscrip Store",
-            }),
+              "@type": "ItemList",
+              name: "Product Listing",
+              itemListElement: products.map((product, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name: product.title,
+                image: product.image,
+                offers: {
+                  "@type": "Offer",
+                  price: product.price,
+                  priceCurrency: "INR"
+                }
+              }))
+            })
           }}
         />
       </Head>
@@ -81,9 +87,12 @@ export default function Home({ products, categories }) {
       <div className="page-wrapper">
         <Header />
         <Navbar />
-        <Hero />
 
         <main className="main-content">
+          <h1 style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}}>DISCOVER OUR PRODUCTS</h1>
+          <Hero />
+
+
           <SortBar
             itemCount={filteredAndSorted.length}
             sortOption={sortOption}
