@@ -1,0 +1,393 @@
+/* [project]/src/styles/filter.css [client] (css) */
+.filters {
+  padding: 20px 0;
+}
+
+.filter-customizable {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+  padding: 0 0 16px;
+}
+
+.filter-custom-check {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.filter-custom-check input {
+  display: none;
+}
+
+.filter-custom-box {
+  border: 1.5px solid #bbb;
+  border-radius: 2px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  transition: border-color .2s, background .2s;
+  display: flex;
+  position: relative;
+}
+
+.filter-custom-check input:checked + .filter-custom-box {
+  background: #292929;
+  border-color: #292929;
+}
+
+.filter-custom-check input:checked + .filter-custom-box:after {
+  content: "✓";
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+}
+
+.filter-custom-label {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #292929;
+  font-size: .8rem;
+  font-weight: 500;
+}
+
+.filter-section {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.filter-section-heading {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  transition: color .2s;
+  display: flex;
+}
+
+.filter-section-heading:hover {
+  color: #000;
+}
+
+.filter-section-heading span:first-child {
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #292929;
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+.filter-arrow {
+  color: #888;
+  font-size: .6rem;
+  transition: transform .3s;
+  display: inline-block;
+}
+
+.filter-section-heading.expanded .filter-arrow {
+  transform: rotate(180deg);
+}
+
+.filter-section-body {
+  opacity: 0;
+  max-height: 0;
+  transition: max-height .35s, opacity .25s;
+  overflow: hidden;
+}
+
+.filter-section-body.open {
+  opacity: 1;
+  max-height: 400px;
+}
+
+.filter-section-inner {
+  padding: 0 0 14px;
+}
+
+.filter-item {
+  cursor: pointer;
+  border-radius: 2px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 4px;
+  transition: background .15s;
+  display: flex;
+}
+
+.filter-item:hover {
+  background: #f5f5f5;
+}
+
+.filter-checkbox {
+  border: 1.5px solid #bbb;
+  border-radius: 2px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  transition: border-color .2s, background .2s;
+  display: flex;
+}
+
+.filter-item.active .filter-checkbox {
+  background: #292929;
+  border-color: #292929;
+}
+
+.filter-checkbox-tick {
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+  display: none;
+}
+
+.filter-item.active .filter-checkbox-tick {
+  display: block;
+}
+
+.filter-label {
+  color: #555;
+  letter-spacing: .5px;
+  text-transform: capitalize;
+  font-size: .82rem;
+  transition: color .2s;
+}
+
+.filter-item.active .filter-label {
+  color: #292929;
+  font-weight: 600;
+}
+
+.filter-all-label {
+  color: #292929;
+  letter-spacing: .5px;
+  padding: 4px 4px 2px;
+  font-size: .82rem;
+  font-weight: 500;
+  display: block;
+}
+
+.filter-placeholder {
+  color: #888;
+  letter-spacing: .5px;
+  padding: 4px;
+  font-size: .82rem;
+  display: block;
+}
+
+.filter-unselect {
+  color: #999;
+  cursor: pointer;
+  letter-spacing: .5px;
+  margin: 4px 0 6px 4px;
+  font-size: .75rem;
+  text-decoration: underline;
+  transition: color .2s;
+  display: inline-block;
+}
+
+.filter-unselect:hover {
+  color: #292929;
+}
+
+@media (max-width: 1023px) {
+  .filters {
+    padding: 16px 20px;
+  }
+}
+
+.footer {
+  color: #ccc;
+  background: #292929;
+  margin-top: 40px;
+}
+
+.footer-top {
+  border-bottom: 1px solid #444;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+  display: flex;
+}
+
+.footer-newsletter {
+  max-width: 400px;
+}
+
+.footer-newsletter h3 {
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.footer-newsletter p {
+  color: #aaa;
+  margin-bottom: 16px;
+  font-size: .82rem;
+  line-height: 1.7;
+}
+
+.newsletter-form {
+  gap: 0;
+  display: flex;
+}
+
+.newsletter-form input {
+  color: #fff;
+  background: none;
+  border: 1px solid #666;
+  flex: 1;
+  padding: 10px 14px;
+  font-size: .85rem;
+}
+
+.newsletter-form input::placeholder {
+  color: #888;
+}
+
+.newsletter-form button {
+  color: #292929;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  font-size: .8rem;
+  font-weight: 600;
+  transition: background .2s, color .2s;
+}
+
+.newsletter-form button:hover {
+  color: #fff;
+  background: none;
+}
+
+.footer-contact {
+  max-width: 300px;
+}
+
+.footer-contact h3 {
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.footer-contact p {
+  color: #aaa;
+  font-size: .82rem;
+  line-height: 1.8;
+}
+
+.footer-bottom {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  display: flex;
+}
+
+.footer-col {
+  min-width: 160px;
+}
+
+.footer-col h4 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 16px;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  flex-direction: column;
+  gap: 10px;
+  display: flex;
+}
+
+.footer-col li a {
+  color: #aaa;
+  font-size: .82rem;
+  transition: color .2s;
+}
+
+.footer-col li a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  gap: 16px;
+  margin-top: 4px;
+  display: flex;
+}
+
+.footer-social a {
+  color: #aaa;
+  align-items: center;
+  transition: color .2s;
+  display: flex;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-bar {
+  text-align: center;
+  color: #777;
+  letter-spacing: 1px;
+  border-top: 1px solid #444;
+  padding: 16px 24px;
+  font-size: .75rem;
+}
+
+@media (max-width: 767px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 16px 24px;
+  }
+
+  .footer-newsletter, .footer-contact {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px 32px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=src_styles_filter_css_0hklytk._.single.css.map*/

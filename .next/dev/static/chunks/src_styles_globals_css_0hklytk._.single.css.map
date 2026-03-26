@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/styles/globals.css"],"sourcesContent":["/* ===== RESET & BASE ===== */\n*,\n*::before,\n*::after {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml {\n  font-size: 16px;\n  scroll-behavior: smooth;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\nbody {\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  color: #292929;\n  background: #fff;\n  line-height: 1.6;\n}\n\na {\n  text-decoration: none;\n  color: inherit;\n}\n\nul {\n  list-style: none;\n}\n\nbutton {\n  cursor: pointer;\n  border: none;\n  background: none;\n  font-family: inherit;\n}\n\ninput {\n  font-family: inherit;\n  border: none;\n  outline: none;\n}\n\nimg {\n  max-width: 100%;\n  display: block;\n}\n\nh1, h2, h3, h4, h5, h6 {\n  font-weight: 400;\n}\n\n/* ===== SCROLLBAR ===== */\n::-webkit-scrollbar {\n  width: 6px;\n}\n\n::-webkit-scrollbar-thumb {\n  background: #bbb;\n  border-radius: 3px;\n}\n\n/* ===== SELECTION ===== */\n::selection {\n  background: #292929;\n  color: #fff;\n}\n"],"names":[],"mappings":"AACA;;;;;;AAQA;;;;;;;AAOA;;;;;;;AAOA;;;;;AAKA;;;;AAIA;;;;;;;AAOA;;;;;;AAMA;;;;;AAKA;;;;AAKA;;;;AAIA;;;;;AAMA"}}]
+}

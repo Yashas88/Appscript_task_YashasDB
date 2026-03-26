@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/yashas/assignment1/src/pages/_app.js"],"sourcesContent":["import \"../styles/globals.css\";\nimport \"../styles/layout.css\";\nimport \"../styles/header.css\";\nimport \"../styles/product.css\";\nimport \"../styles/filter.css\";\n\nexport default function App({ Component, pageProps }) {\n  return <Component {...pageProps} />;\n}\n"],"names":["App","Component","pageProps"],"mappings":";;;;;;;;;;;AAMe,SAASA,IAAI,EAAEC,SAAS,EAAEC,SAAS,EAAE;IAClD,qBAAO,qKAACD;QAAW,GAAGC,SAAS;;;;;;AACjC"}}]
+}
