@@ -1564,7 +1564,7 @@ __turbopack_context__.s([
     ()=>getCategories
 ]);
 // API URL
-const API_URL = process.env.REACT_APP_API_URL || "https://fakestoreapi.com/products";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://fakestoreapi.com/products";
 const PLACEHOLDER_IMAGE = "https://via.placeholder.com/300x400?text=No+Image";
 function normalizeProduct(item) {
     return {
@@ -1582,7 +1582,10 @@ function normalizeProduct(item) {
 }
 async function fetchProducts() {
     try {
-        const res = await fetch(API_URL);
+        // const res = await fetch(API_URL);
+        const res = await fetch(API_URL, {
+            cache: "no-store"
+        });
         if (!res.ok) {
             throw new Error("Failed to fetch products");
         }
