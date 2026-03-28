@@ -7,7 +7,7 @@ import SortBar from "../components/SortBar";
 import Filters from "../components/Filters";
 import ProductGrid from "../components/ProductGrid";
 import Footer from "../components/Footer";
-import { fetchProducts, getCategories } from "../utils/api";
+import { getProducts, getCategories } from "../utils/api";
 
 export default function Home({ products, categories }) {
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -125,11 +125,7 @@ export default function Home({ products, categories }) {
 }
 
 export async function getServerSideProps() {
-  try {
-    const products = await fetchProducts();
-    const categories = getCategories(products);
-    return { props: { products, categories } };
-  } catch {
-    return { props: { products: [], categories: [] } };
-  }
+  const products = getProducts();
+  const categories = getCategories(products);
+  return { props: { products, categories } };
 }
